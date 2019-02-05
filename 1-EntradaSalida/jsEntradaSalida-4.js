@@ -4,6 +4,6 @@
 */
 function mostrar()
 {
-
+elNombre.value
 }
 
