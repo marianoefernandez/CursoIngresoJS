@@ -5,7 +5,10 @@ function mostrar()
 	var nombre;
 	var edad;
 
-	nombre = prompt (elNombre.value "Usted se llama "+nombre);
-	edad = prompt (laEdad.value "y tiene"+edad "años");
+	nombre = elNombre.value;
+	edad = laEdad.value;
+
+	alert ("Usted se llama: " +nombre+ " y tiene " +edad+ " años");
+
 }
 
