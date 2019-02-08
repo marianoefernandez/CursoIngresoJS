@@ -9,7 +9,7 @@ function mostrar()
 	porcentaje = prompt ("Ingrese su descuento (%) ","");
 	porcentaje = parseInt (porcentaje);
 
-	preciofinal = precio * porcentaje / 100;
+	preciofinal = precio - (precio * porcentaje / 100);
 
 	elPrecioFinal.value = preciofinal; 
 }
