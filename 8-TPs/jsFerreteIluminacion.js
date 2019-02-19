@@ -10,5 +10,106 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+ 	var lamparascantidad;
+ 	var descuento;
+ 	var LaMarca; 
+ 	var precioBruto;
+ 	var precioDescuento;
+
+ 	lamparascantidad = Cantidad.value;
+ 	LaMarca = Marca.value;
+ 	precioBruto = lamparascantidad * 35;
+ 	console.log (+precioBruto);
+
+ 	if (lamparascantidad>5)
+ 	{
+ 		descuento=precioBruto*50/100;
+ 		precioDescuento = precioBruto-descuento;
+ 		console.log (precioDescuento);
+ 	}	
+ 	else
+ {
+
+
+ 	if (lamparascantidad == 5) 
+ 	{
+ 		if (LaMarca=="ArgentinaLuz")
+ 		{
+ 			descuento=precioBruto*40/100;
+ 			precioDescuento = precioBruto-descuento;
+ 			console.log (precioDescuento);
+ 		}
+ 		else
+ 		{
+ 			descuento=precioBruto*30/100;
+ 			precioDescuento = precioBruto-descuento;
+ 			console.log (precioDescuento);
+ 		}// if (lamparascantidad == 5) 
+ 
+ 	}
+ 	else
+ 	{
+ 		if (lamparascantidad == 4) 
+ 	{
+ 			if (LaMarca == "ArgentinaLuz" || LaMarca == "FelipeLamparas")
+			{
+				descuento=precioBruto*25/100;
+ 				precioDescuento = precioBruto-descuento;
+ 				console.log (precioDescuento);
+			}
+		else
+		{
+			descuento=precioBruto*20/100;
+ 			precioDescuento = precioBruto-descuento;
+ 			console.log (precioDescuento);
+		}
+		else
+		{
+			if (lamparascantidad == 3)
+			{
+				if (LaMarca == "ArgentinaLuz")
+				{
+					descuento=precioBruto*15/100;
+ 					precioDescuento = precioBruto-descuento;
+ 					console.log (precioDescuento);
+				}if (LaMarca== "FelipeLamparas")
+					{
+						descuento=precioBruto*10/100;
+ 						precioDescuento = precioBruto-descuento;
+ 						console.log (precioDescuento);
+					}
+					else
+					{
+						descuento=precioBruto*5/100;
+ 						precioDescuento = precioBruto-descuento;
+ 						console.log (precioDescuento);
+					}
+					else
+				{
+
+					if (precioDescuento>120)
+					{
+						descuento = precioDescuento /100 * 10
+						precioDescuento = precioDescuento + descuento
+
+						alert ("IIBB Usted pago " + descuento + "siendo " +descuento+ "El precio que pago ");
+					}
+					else
+					}
+
+				}
+
+
+			}
+
+		}
+
+ 	}
+
+ 	 
+ 	{
+ 		
+ 	}
+
+
 }
