@@ -41,7 +41,7 @@ switch (laHora)
 		break;		
 
 	default:
-		mensaje = " la hora no existe";
+		mensaje = " La hora no existe";
 		break;
 
 }
