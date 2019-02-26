@@ -5,7 +5,7 @@ function mostrar()
 	var preciototal; 
 	var descuento;
 	var total;
-	var paquetes
+	var paquetes;
 
 
 	habitación = prompt ("Elija su habitación: (1- Cuesta 100$ y no tiene tv 2- Cuesta 300$ y tiene tv 3- cuesta 500$ y tiene 2 tv, equipo de musica, pc y lavarropas"  , "");
