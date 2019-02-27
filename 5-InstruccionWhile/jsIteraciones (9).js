@@ -25,7 +25,7 @@ function mostrar()
 
 
 
-
+while ( isNan (nota) == true || sexo
 
 
 }//FIN DE LA FUNCIÓN
