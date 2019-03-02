@@ -1,65 +1,48 @@
 function mostrar()
 {
-	var dato1;
-	var dato2;
-	var dato3;
-	var dato4;
-	var mayor;
-	var total;
+	var numero1;
+	var numero2;
+	var suma;
+	var division;
 
-	dato1 =  prompt ("ingrese un importe", "");
-	dato1 = parseInt (dato1);
-	dato2 =  prompt ("ingrese otro importe", "");
-	dato2 = parseInt (dato2);
-	dato3 =  prompt ("ingrese otro importe", "");
-	dato3 = parseInt (dato3);
-	dato4 =  prompt ("ingrese otro importe", "");
-	dato4 = parseInt (dato4);
+	numero1 = prompt ("Ingrese un número" , "");
+	numero1 = parseInt (numero1);
+	numero2 = prompt ("Ingrese otro número" , "")
+	numero2 = parseInt (numero2);
 
-	total = dato1 + dato2 + dato3 + dato4;
-
-	if (dato1 > dato2 && dato1 > dato3 && dato1 > dato4)
+	if (numero1 == numero2)
 		{
-			mayor = dato1;
+			alert (numero1 + " y " + numero2);
 		}
 		else
-		{
-			if (dato2 > dato3 && dato2 > dato4)
+		{if (numero1 > numero2)	
 			{
-				mayor = dato2;
+				division = numero1 / numero2;
+				alert (division);
 			}
-			else
-			{
-				if (dato3 > dato4)
-				{
-					mayor = dato3;
-				}
-				else 
-				{
-					mayor = dato4;
-				}
+			else	
+			{if (numero1 < numero2)
+				suma = numero2 + numero1;
+				alert (suma);
+
 			}
-		}
-	if (total > 100)
-	{
-		total = total * 90 / 100;
-	}
-	else
-	{	
-		if (total > 50)
-		{
-			total = total * 95 / 100;
-		}
-		else
+			if (suma<50)
 			{
-				total = total + (total / 100 * 15);
+			alert ("la suma es " + suma + " y es menor a 50"); 
 			}
 
-	}
+		}	
+}		
+//(IF)Pedir dos números y mostrar el resultado: Si son iguales los muestro concatenados.
+//Si el primero es mayor, los divido, de lo contrario los sumo. 
+//Si la suma es menor a 50 ,además de mostrar el resultado, muestro el mensaje:
+//"la suma es xxx y es menor a 50".
 
-	alert ("El mayor de la compra es: " + mayor + " y el total es: " + total);
-}
-//Un sistema que ingrese 4 importes, mostrar el mayor de la compra,
-//después decir el total, si supera 100 pesos descuento del 10%
-//si supera los 50$ es el 5%
-//si es menos de 50$ se le suma el 15%
+//Planteo del problema 
+
+//1- Variables que necesito y muestro
+//2- prompt
+//3- parseInt
+//4- if/else 
+//5 alert 1
+//6 if final (alert final)

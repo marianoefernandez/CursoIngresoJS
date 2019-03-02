@@ -1,64 +1,45 @@
 function mostrar()
 {
-	var habitación;
-	var mediodepago; 
-	var preciototal; 
-	var descuento;
-	var total;
-	var paquetes;
+	var dias;
+	var mensaje;
 
+	dias = prompt ("Ingrese un día de la semana (domingo, lunes, martes, miercoles, jueves, viernes, sábado)" , ""); 
 
-	habitación = prompt ("Elija su habitación: (1- Cuesta 100$ y no tiene tv 2- Cuesta 300$ y tiene tv 3- cuesta 500$ y tiene 2 tv, equipo de musica, pc y lavarropas"  , "");
-	habitación = parseInt (habitación);
-	mediodepago = prompt ("Elija el tipo de pago (1-Efectivo 2-Visa 3-Paypal 4-MercadoPago 5-Otro", ""); 
-	switch (mediodepago)
-	{
-		case 1:
-			descuento = 20
-			paquetes = prompt ("Ha pagado en efectivo puede seleccionar los siguientes paquetes con un descuento 1-Solodesayunos (100$ +10% al descuento total), 2-todoincluido (200$ +15% de descuento), 3-Paquete de bebida, (100$) 4- No quiero paquete", "");
-			break;
-		case 3:
-			descuento = 15
-			paquetes = prompt ("Ha pagado con Paypal Seleccione los siguientes paquetes 1-Solodesayunos (100$), 2-todoincluido (200$  +10% de descuento total), 3-Paquete de bebida (100$) 4-No quiero paquete", "");
-			break;	
-		case 2:
-		case 4:
-			descuento = 10
-			paquetes = prompt ("Seleccione los siguientes paquetes 1-Solodesayunos (100$), 2-todoincluido (200$), 3-Paquete de bebida (100$) 4-No quiero paquete", "");
-			break;	
-		case 5:	
-			descuento = 5
-			paquetes = prompt ("Seleccione los siguientes paquetes 1-Solodesayunos (100$), 2-todoincluido (200$), 3-Paquete de bebida (100$) 4-No quiero paquete", "");
-			break;	
-	}		
-
-	switch (habitación)
+	switch (dias)
 		{
-			case 1:
-			habitación = 100
-			case 2:
-			habitación = 300
-			case 3:
-			habitación = 500
-		}
-	switch (mediodepago)
-		{
-			case 1:
-			descuento = 20
-			case 2:
-			case 4:
-			descuento = 10
-			case 5: 
-			descuento = 5
-			case 3
-			descuento = 15
+			case "domingo":
+			case "sábado" :
+				mensaje = " buen finde ";
+				break;
+
+			case "lunes":
+			case "martes":
+			case "miercoles":
+			case "jueves":
+			case "viernes":
+				mensaje = " a trabajar ";
+				break;
+
+			default:
+				mensaje = " no es un día hábil ";
+				break; 	
 		}
 	
+	alert (dias + ":"+ mensaje);
 
+
+		
 }
-/* USAR SOLO SWITCH
-cada habitación de un hotel tiene un precio, hay promociones según el tipo de pago, si es con tarjeta visa un 10%,
-efectivo 20% otro medio 5%.
-Si compraste el paquete "todoincluido" y pagas con Paypal se te suma un 10% al descuento 
-si pagas en efectivo tenes varias opciones, el paquete "soloDesayunos" te suma un 10% al descuento, si el paquete 
-es "todoincluido" te suma un 15% y para el resto de los paquetes no tiene descuento adicional.
+
+//Solo SWITCH pedir el ingreso de un día de la semana, si es fin de semana mostrar " buen finde", 
+//si es día hábil “ a trabajar”, si no es un día valido, también informarlo, 
+//Usar una sola ventana alert.
+
+//Planteo del problema
+
+//1-Variables de lo que necesito y lo que muestro
+//2- prompt
+//3- switch
+//4- Todos los case / break;
+//5- default del resto / break;
+//6- alert (mensaje);
