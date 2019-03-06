@@ -2,13 +2,16 @@ function mostrar()
 {
 	var precio;
 	var porcentaje;
+	var precioFinal;
 
-	precio = prompt ("Ingrese un precio ($)" , "");
-	precio = parseInt (precio); 
-	porcentaje = prompt ("Ingrese un porcentaje de descuento (%)" , "");
+	precio = prompt ("Ingrese el precio ($)");
+	precio = parseInt (precio);
+	porcentaje = prompt ("Ingrese el porcentaje (%)");
 	porcentaje = parseInt (porcentaje);
 
-	elPrecioFinal.value = precio - (precio * porcentaje / 100) + " $ ";
+	precioFinal = precio - (precio * porcentaje / 100);
+
+	elPrecioFinal.value = precioFinal + " $";
 }
 //Pedir por prompt el precio y el porcentaje de descuento, mostrar el precio final con descuento por id.
 

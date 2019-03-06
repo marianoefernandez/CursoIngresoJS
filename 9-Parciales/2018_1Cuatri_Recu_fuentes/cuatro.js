@@ -2,36 +2,34 @@ function mostrar()
 {
 	var numero1;
 	var numero2;
-	var suma;
-	var division;
+	var resultado;
 
-	numero1 = prompt ("Ingrese un número" , "");
+	numero1 = prompt ("Ingrese un número");
 	numero1 = parseInt (numero1);
-	numero2 = prompt ("Ingrese otro número" , "")
+	numero2 = prompt ("Ingrese otro número");
 	numero2 = parseInt (numero2);
 
 	if (numero1 == numero2)
-		{
-			alert (numero1 + " y " + numero2);
-		}
-		else
-		{if (numero1 > numero2)	
-			{
-				division = numero1 / numero2;
-				alert (division);
-			}
-			else	
-			{if (numero1 < numero2)
-				suma = numero2 + numero1;
-				alert (suma);
+	{
+		resultado = numero1 + " y " + numero2;
+	}
 
-			}
-			if (suma<50)
-			{
-			alert ("la suma es " + suma + " y es menor a 50"); 
-			}
+	if (numero1 > numero2) 
+	{
+		resultado = numero1 / numero2;
+	}
 
-		}	
+	if (numero2 > numero1)
+	{
+		resultado = numero2 + numero1;
+	}
+
+	alert (resultado);
+
+	if (resultado < 50 && numero1 < numero2) 
+	{
+		alert ("la suma es " + resultado + " y es menor a 50");
+	}
 }		
 //(IF)Pedir dos números y mostrar el resultado: Si son iguales los muestro concatenados.
 //Si el primero es mayor, los divido, de lo contrario los sumo. 

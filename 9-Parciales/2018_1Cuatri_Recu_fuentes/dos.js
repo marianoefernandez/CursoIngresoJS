@@ -2,7 +2,7 @@ function mostrar()
 {
 	var nombre;
 	var localidad;
-	
+
 	nombre = elNombre.value;
 	localidad = laLocalidad.value;
 
@@ -15,4 +15,4 @@ function mostrar()
 
 //1- Variables de los datos que necesito y muestro
 //2- variable = elId.value
-//3- alert
+//3- alert 

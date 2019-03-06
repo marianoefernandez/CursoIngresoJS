@@ -1,68 +1,63 @@
 function mostrar()
 {
-	var nota;
+	var nota; 
 	var sexo;
 	var promedio;
 	var notaMasBaja;
 	var sexoNotaMasBaja;
-	var cantidadVarones6 = 0;
-	var contador = 0;
+	var cantidadVaronesNota6 = 0;
 	var acumulador = 0;
+	var contador = 0;
 
 	while (contador < 5)
 	{
 		do
 		{
-		nota = prompt ("Ingrese una nota del 0 al 10" , "");
-		nota = parseInt (nota);
+			nota = prompt ("Ingrese una nota del 0 al 10");
+			nota = parseInt (nota);
 
-			if (nota < 0 || nota > 10)
-				{ 
-					alert ("Por favor ingrese un número del 0 al 10");
-				}
-				if (isNaN (nota)) 
-				{
-					alert ("Por favor ingrese un número valido");
-				}
-		}while (isNaN(nota) || nota < 0 || nota > 10);	
-
-			do
+			if (isNaN (nota) || nota > 10 || nota < 0)
 			{
-			sexo = prompt ("Ingrese el sexo (f = femenino ó m = masculino)" , "");
+				alert ("Por favor solamente ingrese una nota del 0 al 10");
+			}
+		}while (isNaN (nota) || nota > 10 || nota < 0);
+		
+		do
+		{
+			sexo = prompt ("Ingrese el sexo (f = femenino m = masculino)");
 
-			if (isNaN(sexo) == false || sexo != "f" && sexo != "m")
-				{
-					alert ("Por favor ingrese sólo f ó m (f = femenino ó m = masculino)");
-				}						
-		}while (isNaN(sexo) == false || sexo != "f" && sexo != "m");
+			if (isNaN (sexo) == false || sexo != "f" && sexo != "m")
+			{
+				alert ("Por favor solamente ingrese f o m");
+			}
+		}while (isNaN (sexo) == false || sexo != "f" && sexo != "m")
 
-			if (sexo == "m" && nota > 5)
-			{	
-				cantidadVarones6 ++;
-			}		
+		acumulador = acumulador + nota;
 
-			if (contador == 0) 
+		if (contador == 0)
+		{
+			notaMasBaja = nota;
+			sexoNotaMasBaja = sexo;
+		}
+		else
+		{
+			if (notaMasBaja > nota) 
 			{
 				notaMasBaja = nota;
 				sexoNotaMasBaja = sexo;
 			}
-			else
+			
+			if (nota > 5 && sexo == "m")
 			{
-				if (nota < notaMasBaja) 
-				{
-					notaMasBaja = nota;
-					sexoNotaMasBaja = sexo;
-				}
-
+				cantidadVaronesNota6++;
 			}
-			acumulador = acumulador + nota;
-			contador ++;
+		}
+		contador ++;	
 	}
-
+	
 	promedio = acumulador / 5;
 
-	alert ("El promedio de las notas totales es " + promedio + "/10" + " La nota más baja es un: " + notaMasBaja + " pertenece al sexo: " + sexoNotaMasBaja + " y la cantidad de varones en la que su nota fue mayor o igual a 6 es de: " + cantidadVarones6 + " varones.");
-
+	alert ("El promedio de las notas totales es de: " + promedio + "/10" + ", la nota más baja es: " + notaMasBaja + ", el sexo de la nota más baja es: " + sexoNotaMasBaja + " la cantidad de varones en la que su nota fue mayor o igual a 6 es de " + cantidadVaronesNota6 + " varones");
 }
 //Realizar el algoritmo que permita el ingreso por prompt de las notas (validar entre 0 y 10) ,
 //el sexo (validar el sexo “f” o “m”) de 5 alumnos, informar por alert: 

@@ -1,107 +1,123 @@
-	function mostrar()
+function mostrar()
 {
-	var animal;
-	var pesoAnimal;
-	var temperaturaHabitat;
-	var continuar=true;
-	var cantidadTemperaturapares = 0;
+	var marca;
+	var peso;
+	var temperatura;
+	var temperaturasPares = 0;
+	var marcaProductoMasPesado;
+	var cantidadProductosBajoCero = 0;
+	var promedio;
+	var sumaDePesos = 0;
+	var cantidadProductos = 0;
+	var pesoMaximo;
+	var pesoMinimo;
+	var continuar = true;
 	var contador = 0;
-	var animalMasPesado;
-	var temperaturaAnimalmasPesado;
-	var cantidadAnimalesBajoCero = 0;
-	var sumaPesoAnimales = 0;
-	var	pesoAnimalMasPesadoBajoCero;
-	var pesoAnimalMenosPesadoBajoCero;
-	var cantidadAnimales = 0;
-	var pesoAnimalMasPesado;
 
-	while (continuar==true)
-	 {
-	 	do
-	 	 {
-	 	 	animal = prompt("Nombre del animal");
-	 	 }while(isNaN(animal) == false);
+	while (continuar == true)
+	{
+		do
+		{
+			marca = prompt ("Ingrese la marca del producto");
 
-	 	do
-	 	 {
-	 	 	pesoAnimal = prompt("Peso del animal (entre 1 y 1000 kg)");
-	 	 	pesoAnimal = parseInt(pesoAnimal);
+			if (isNaN (marca) == false) 
+			{
+				alert ("Por favor sólo utilice letras");
+			}
+		}while (isNaN (marca) == false);
 
-	 	 	if (isNaN(pesoAnimal) || pesoAnimal < 1 || pesoAnimal > 1000)
-	 	 	 {
-	 	 	 	alert("Ingrese solo un numero entre 1 y 1000 kg");
-	 	 	 }
-	 	 }while(isNaN(pesoAnimal) || pesoAnimal < 1 || pesoAnimal > 1000);
+		do
+		{
+			peso = prompt ("Ingrese el peso del producto (entre 1 a 100 kg)");
+			peso = parseInt (peso);
 
-	 	do
-	 	 {
-	 	 	temperaturaHabitat = prompt("Temperatura del habitat del animal (Solo entre -30 y 30)");
-	 	 	temperaturaHabitat = parseInt(temperaturaHabitat);
+			if (isNaN (peso) || peso > 100 || peso < 1) 
+			{
+				alert ("Por favor sólo ingrese un peso entre 1 a 100 kg");
+			}
+		}while (isNaN (peso) || peso > 100 || peso < 1);
 
-	 	 	if (isNaN(temperaturaHabitat) || temperaturaHabitat < (-30) || temperaturaHabitat > 30)
-	 	 	 {
-	 	 	 	alert("Ingrese solo un numero entre -30 y 30");
-	 	 	 }
-	 	 }while(isNaN(temperaturaHabitat) || temperaturaHabitat < (-30) || temperaturaHabitat > 30);
+		do
+		{
+			temperatura = prompt ("Ingrese la temperatura del producto (entre -30° a 30°)");
+			temperatura = parseInt (temperatura);
 
-		if (temperaturaHabitat%2 == 0)
-		 {
-	 		cantidadTemperaturapares ++;
-	 	 }
+			if (isNaN (temperatura) || temperatura > 30 || temperatura < (-30)) 
+			{
+				alert ("Por favor sólo ingrese una temperatura entre -30° a 30 °");
+			}
+		}while (isNaN (temperatura) || temperatura > 30 || temperatura < (-30));
 
-		if (contador == 0)
-		 {
-	 		animalMasPesado = animal;
-	 		temperaturaAnimalmasPesado = temperaturaHabitat;
-	 		pesoAnimalMasPesado = pesoAnimal;
-		 }
+		if (temperatura % 2 == 0 && temperatura != 0) 
+		{
+			temperaturasPares ++;
+		}
+
+		if (temperatura < 0) 
+		{
+			cantidadProductosBajoCero ++;
+		}
+
+		if (peso > 0) 
+		{
+			sumaDePesos = sumaDePesos + peso;
+			cantidadProductos++;
+		}
+
+		if (contador == 0) 
+		{
+			pesoMinimo = peso;
+			pesoMaximo = peso;
+			marcaProductoMasPesado = marca;
+		}
 		else
-		 {
-		 	if (pesoAnimalMasPesado < pesoAnimal)
-		 	 {
-		 	 	animalMasPesado = animal;
-		 	 	temperaturaAnimalmasPesado = temperaturaHabitat;
-		 	 }
-		 }
+		{
+			if (pesoMaximo < peso) 
+			{
+				pesoMaximo = peso;
+				marcaProductoMasPesado = marca;
+			}
+			else
+			{
+				if (pesoMinimo > peso) 
+				{
+					pesoMinimo = peso;
+				}
+			}
+		}
+	contador ++;
+	continuar = confirm ("¿Desea continuar?");
+	
+	}
 
-		if (contador == 0 && temperaturaHabitat < 0)
-		 {
-	 		pesoAnimalMasPesadoBajoCero = pesoAnimal;
-	 		pesoAnimalMenosPesadoBajoCero = pesoAnimal;
-		 }
+	promedio = sumaDePesos / cantidadProductos;
 
-		if (contador != 0 && temperaturaHabitat < 0)
-		 {
-		 	if (pesoAnimalMasPesadoBajoCero < pesoAnimal)
-		 	 {
-		 	 	pesoAnimalMasPesadoBajoCero = pesoAnimal;
-		 	 }
-		 	if (pesoAnimalMenosPesadoBajoCero > pesoAnimal)
-		 	 {
-		 	 	pesoAnimalMenosPesadoBajoCero = pesoAnimal;
-		 	 }
-		 }
-
-		if (temperaturaHabitat < 0)
-		 {
-		 	cantidadAnimalesBajoCero ++;
-		 }
-
-		cantidadAnimales ++;
-
-		sumaPesoAnimales += pesoAnimal;
-
-	 	contador = 1;
-
-	 	continuar = confirm("¿Desea continuar?");
-	 }
-
-	promedioPesoAnimales= sumaPesoAnimales/cantidadAnimales;
-
-	document.write("La Cantidad de temperaturas pares = " + cantidadTemperaturapares + " temperaturas son pares");
-	document.write("<br>El animal mas pesado es " + animalMasPesado + " y vive a " + temperaturaAnimalmasPesado + "°");
-	document.write("<br>Hay " + cantidadAnimalesBajoCero + " animales que viven a temperaturas bajo cero");
-	document.write("<br>El promedio de peso de todos los animales es " + promedioPesoAnimales + " kg");
-	document.write("<br>El animal que vive a temperatura bajo cero mas pesado pesa " + pesoAnimalMasPesadoBajoCero + " kg. Y el peso del animal que vive a temperatura bajo cero mas liviano es de " + pesoAnimalMenosPesadoBajoCero + " kg.");
-
+	document.write ("La cantidad de temperaturas pares es de: " + temperaturasPares + " pares");
+	document.write ("<br>La marca del producto más pesado es: " + marcaProductoMasPesado);
+	document.write ("<br>La cantidad de productos que se conservan a menos de 0 grados es de: " + cantidadProductosBajoCero);
+	document.write ("<br>El promedio de todos los productos es de: " + promedio);
+	document.write ("<br>El peso máximo es de " + pesoMaximo + " kg, y el peso minimo es: " + pesoMinimo + " kg"); 
 }
+
+
+//Realizar el algoritmo que permita ingresar la marca del producto,
+// el peso el cual debe ser entre 1 y 100 (validar), la temperatura de almacenamiento(entre -30 y 30) 
+//hasta que el usuario quiera e informar al terminar el ingreso por document.write: 
+//a) La cantidad de temperaturas pares. b) La marca del producto más pesado 
+//c) La cantidad de productos que se conservan a menos de 0 grados. 
+//d) El promedio del peso de todos los productos.	f) El peso máximo y el mínimo.
+
+//Planteo del problema
+
+//1- Variables de lo que necesito ingresar/mostrar (acumulador/contador/etc)
+//2- {"Abro llave principal". While principal/continuar 
+//3- do {prompt 
+//4- while (error)
+//5- do {prompt
+//6- if (del error)
+//7- while (error)
+//8- if/else (de cada operación necesaria)
+//9- Operaciones 
+//10- continuar = confirm. Cierro la llave principal}
+//11- Operaciones restantes
+//12- Document.write

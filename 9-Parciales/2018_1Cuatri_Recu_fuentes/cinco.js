@@ -3,13 +3,13 @@ function mostrar()
 	var dias;
 	var mensaje;
 
-	dias = prompt ("Ingrese un día de la semana (domingo, lunes, martes, miercoles, jueves, viernes, sábado)" , ""); 
+	dias = prompt ("Ingrese un día de la semana (domingo/lunes/martes/miercoles/jueves/viernes/sabado)");
 
 	switch (dias)
 		{
+			case "sabado":
 			case "domingo":
-			case "sábado" :
-				mensaje = " buen finde ";
+				mensaje = "buen finde";
 				break;
 
 			case "lunes":
@@ -17,18 +17,14 @@ function mostrar()
 			case "miercoles":
 			case "jueves":
 			case "viernes":
-				mensaje = " a trabajar ";
+				mensaje = "a trabajar"
 				break;
 
 			default:
-				mensaje = " no es un día hábil ";
-				break; 	
+				mensaje = "no es un día valido"
+				break;
 		}
-	
-	alert (dias + ":"+ mensaje);
-
-
-		
+		alert (mensaje);
 }
 
 //Solo SWITCH pedir el ingreso de un día de la semana, si es fin de semana mostrar " buen finde", 

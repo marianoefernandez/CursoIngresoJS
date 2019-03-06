@@ -1,6 +1,118 @@
 function mostrar()
 {
+	var animal;
+	var peso;
+	var temperatura;
+	var nombreAnimalMasPesado;
+	var contador = 0;
+	var temperaturasPares = 0;
+	var animalMasPesado;
+	var temperaturaAnimalMasPesado;
+	var cantidadAnimalesBajoCero = 0;
+	var sumaDePesos = 0;
+	var cantidadAnimales = 0; 
+	var promedio;
+	var pesoMaximoBajoCero;
+	var pesoMinimoBajoCero;
+	var continuar = true;
 
+	while (continuar == true)
+	{
+		do
+		{
+			animal = prompt ("Ingrese un nombre para el animal");
+
+			if (isNaN (animal) == false)
+			{
+				alert ("Por favor sólo ingrese un nombre");
+			}
+		}while (isNaN (animal) == false);
+
+		do
+		{
+			peso = prompt ("Ingrese un peso entre 1 kg y 1000 kg");
+			peso = parseInt (peso);
+
+			if (isNaN (peso) || peso < 1 || peso > 1000)
+			{
+				alert ("Por favor sólo ingrese un peso entre 1 kg y 1000 kg");
+			}
+		}while (isNaN (peso) || peso < 1 || peso > 1000);
+		do
+		{
+			temperatura = prompt ("Ingrese una temperatura entre -30° y 30°");
+			temperatura = parseInt (temperatura);
+
+			if (isNaN (temperatura) || temperatura < (-30) || temperatura > 30)
+			{
+				alert ("Por favor sólo ingrese una temperatura entre -30° y 30°");
+			}
+		}while (isNaN (temperatura) || temperatura < (-30) || temperatura > 30);
+
+
+		if (temperatura % 2 == 0 && temperatura != 0) 
+		{
+			cantidadPares ++;
+		}
+
+		if (contador == 0) 
+		{	
+			animalMasPesado = peso;
+			nombreAnimalMasPesado = animal;
+			temperaturaAnimalMasPesado = temperatura;
+		}
+		else
+		{
+			if (animalMasPesado < peso) 
+			{
+				animalMasPesado = peso;
+				nombreAnimalMasPesado = nombre;
+				temperaturaAnimalMasPesado = temperatura;
+			}	
+		}
+			
+		if (temperatura < 0) 
+		{
+			cantidadAnimalesBajoCero ++;
+		}	
+
+		if (peso > 0) 
+		{
+			sumaDePesos = sumaDePesos + peso;
+			cantidadAnimales ++;
+		}
+
+		if (contador == 0 && temperatura < 0) 
+		{
+			pesoMaximoBajoCero = peso;
+			pesoMaximoBajoCero = peso;
+		}
+		else
+		{
+			if (pesoMaximoBajoCero < peso) 
+			{
+				pesoMaximoBajoCero = peso;
+			}
+			else
+			{
+				if (pesoMinimoBajoCero > peso)
+				{
+					pesoMinimoBajoCero = peso;
+				}
+
+			}
+
+		}
+		contador = 1;
+		continuar = confirm ("¿Desea continuar?");
+	}
+	promedio = sumaDePesos / cantidadAnimales;
+
+	document.write ("La cantidad de temperaturas pares es de: " + temperaturasPares);
+	document.write ("<br>El nombre del animal más pesado es: " + nombreAnimalMasPesado + " y su temperatura es de: " + temperaturaAnimalMasPesado + "°");
+	document.write ("<br>La cantidad de animales que viven a menos de 0 grados es de: " + cantidadAnimalesBajoCero);
+	document.write ("<br>El promedio de peso de los animales es de: " + promedio + " kilos");
+	document.write ("<br>El peso máximo de los animales cuya temperatura es bajo cero es de : " + pesoMaximoBajoCero + " kilos. El peso minimo de los animales cuya temperatura es bajo cero es de: " + pesoMinimoBajoCero + " kilos");
 }
 
 //Realizar el algoritmo que permita ingresar el nombre de un animal del zoológico, 
