@@ -10,106 +10,80 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	var lamparascantidad;
+ 	var lamparas;
+ 	var marca;
+ 	var cantidad;
  	var descuento;
- 	var LaMarca; 
- 	var precioBruto;
- 	var precioDescuento;
+ 	var precioFinal;
+ 	var impuesto;
+ 	var mensaje;
 
- 	lamparascantidad = Cantidad.value;
- 	LaMarca = Marca.value;
- 	precioBruto = lamparascantidad * 35;
- 	console.log (+precioBruto);
+ 	lamparas = 35
+	cantidad = Cantidad.value;
+	cantidad = parseInt (cantidad);
+	marca = LaMarca.value;
+	precioFinal = 35 * cantidad
 
- 	if (lamparascantidad>5)
+	if (cantidad < 3)
+	{
+		mensaje = "El precio sin descuento es de ";
+		
+	}
+
+ 	if (cantidad>=6) 
  	{
- 		descuento=precioBruto*50/100;
- 		precioDescuento = precioBruto-descuento;
- 		console.log (precioDescuento);
- 	}	
+ 		descuento = 50;
+ 		mensaje = "El precio final con un descuento del " + descuento + "% es ";
+ 	}
+
+ 	if (cantidad>=5 && marca == "ArgentinaLuz")
+ 	{
+ 		descuento = 40;
+ 		mensaje = "El precio final con un descuento del " + descuento + "% es "
+ 	}
  	else
- {
-
-
- 	if (lamparascantidad == 5) 
  	{
- 		if (LaMarca=="ArgentinaLuz")
+ 		descuento = 30;
+ 		mensaje = "El precio final con un descuento del " + descuento + "% es "
+ 	}
+
+ 	if (cantidad>=4 && marca == "ArgentinaLuz" || "“FelipeLamparas”")
+ 	{
+ 		descuento = 25;
+ 		mensaje = "El precio final con un descuento del " + descuento + "% es "
+ 	}
+ 	else
+ 	{
+ 		descuento = 20;
+ 		mensaje = "El precio final con un descuento del " + descuento + "% es "
+ 	}
+
+ 	if (cantidad>=3 && marca == "ArgentinaLuz")
+ 	{
+ 		descuento = 15;
+ 		mensaje = "El precio final con un descuento del " + descuento + "% es "
+ 	}
+ 	else
+ 	{
+ 		if (marca == "“FelipeLamparas”") 
  		{
- 			descuento=precioBruto*40/100;
- 			precioDescuento = precioBruto-descuento;
- 			console.log (precioDescuento);
+ 			descuento = 10;
+ 			mensaje = "El precio final con un descuento del " + descuento + "% es "
  		}
  		else
  		{
- 			descuento=precioBruto*30/100;
- 			precioDescuento = precioBruto-descuento;
- 			console.log (precioDescuento);
- 		}// if (lamparascantidad == 5) 
- 
- 	}
- 	else
- 	{
- 		if (lamparascantidad == 4) 
- 	{
- 			if (LaMarca == "ArgentinaLuz" || LaMarca == "FelipeLamparas")
-			{
-				descuento=precioBruto*25/100;
- 				precioDescuento = precioBruto-descuento;
- 				console.log (precioDescuento);
-			}
-		else
-		{
-			descuento=precioBruto*20/100;
- 			precioDescuento = precioBruto-descuento;
- 			console.log (precioDescuento);
-		}
-		else
-		{
-			if (lamparascantidad == 3)
-			{
-				if (LaMarca == "ArgentinaLuz")
-				{
-					descuento=precioBruto*15/100;
- 					precioDescuento = precioBruto-descuento;
- 					console.log (precioDescuento);
-				}if (LaMarca== "FelipeLamparas")
-					{
-						descuento=precioBruto*10/100;
- 						precioDescuento = precioBruto-descuento;
- 						console.log (precioDescuento);
-					}
-					else
-					{
-						descuento=precioBruto*5/100;
- 						precioDescuento = precioBruto-descuento;
- 						console.log (precioDescuento);
-					}
-					else
-				{
-
-					if (precioDescuento>120)
-					{
-						descuento = precioDescuento /100 * 10
-						precioDescuento = precioDescuento + descuento
-
-						alert ("IIBB Usted pago " + descuento + "siendo " +descuento+ "El precio que pago ");
-					}
-					else
-					}
-
-				}
-
-
-			}
-
-		}
-
+ 			descuento = 5;
+ 			mensaje = "El precio final con un descuento del " + descuento + "% es "
+ 		}	
  	}
 
- 	 
- 	{
- 		
- 	}
+ 	precioFinal = precioFinal * descuento / 100;
 
-
+ 	alert (mensaje + precioFinal + "$");
 }
+
+
+
+//Planteo del problema.
+
+//

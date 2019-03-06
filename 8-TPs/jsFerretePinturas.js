@@ -4,30 +4,31 @@ B.	Al ingresar una temperatura en Centígrados debemos mostrar la temperatura en
 */
 function FahrenheitCentigrados () 
 {
-	var fahrenheit;
-	var centígrados;
+	var temperatura;
+	var grados;
 
-	fahrenheit = Temperatura.value;
-	fahrenheit = parseInt (fahrenheit);
+	temperatura = Temperatura.value;
+	temperatura = parseInt (temperatura);
 
-	centígrados = (fahrenheit - 32) * 5 / 9;
-
-	alert ( fahrenheit + " Fahrenheit son " + centígrados + " centígrados");
-
-
+	grados = (temperatura - 32) * 5 / 9;
+	
+	alert (temperatura + "°F son " + grados + "° C");
 }
 
 function CentigradosFahrenheit () 
 {
-	var centígrados;
+	var temperatura;
 	var fahrenheit;
 
-	centígrados = Temperatura.value;
-	centígrados = parseInt (centígrados);
+	temperatura = Temperatura.value;
+	temperatura = parseInt (temperatura);
 
-	fahrenheit = (centígrados * 9 / 5) + 32;
-
-	alert ( centígrados + " centígrados son " + fahrenheit + " fahrenheit");
-
-
+	fahrenheit = temperatura * 9 / 5 + (32);
+	alert (temperatura + "°C son " + fahrenheit + "° F");
 }
+//Planteo del problema.
+
+//1-variables que necesito usar y mostrar;
+//2-variable = elId.value;
+//3-operaciones
+//4-alert (loquemuestro);

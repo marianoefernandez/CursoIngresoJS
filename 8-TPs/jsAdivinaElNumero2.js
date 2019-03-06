@@ -10,19 +10,48 @@ Desde  6 Intentos hasta 10:”falta técnica”
 Más de 10 intentos: “afortunado en el amor!!”.*/
 
 var numeroSecreto; 
-var contadorIntentos;
+var contadorIntentos = 0;
+var numeroIngresado;
+var mensaje;
+
 
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 100
-	 
-	
+	numeroSecreto = Math.floor(Math.random() * 101);
+	console.log (numeroSecreto);
 
+	alert ("Arranca el juego");
+	//Genero el número RANDOM entre 1 y 100
 }
 
 function verificar()
 {
-	
-	
+	numeroIngresado = numero.value;
 
+
+	if (numeroIngresado != numeroSecreto || numeroIngresado == numeroSecreto)
+	{
+		contadorIntentos ++;
+	}
+
+	intentos.value = contadorIntentos + " intentos";
+
+	if (numeroIngresado > numeroSecreto) 
+	{
+		mensaje = "se paso";
+	}
+	else
+	{
+		mensaje = " falta...";
+	}
+
+	if (numeroIngresado == numeroSecreto && ) 
+	{
+		mensaje = "Usted es Psíquico";
+		contadorIntentos = contadorIntentos - contadorIntentos;
+	}
+	
+	alert (mensaje);
 }
+
+//Math.floor(Math.random()

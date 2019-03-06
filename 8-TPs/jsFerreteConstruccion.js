@@ -6,34 +6,56 @@ C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de c
 
 function Rectangulo () 
 {
-	var ancho;
 	var largo;
-	var perimetro;
+	var ancho;
 	var alambre;
 
-	ancho = Ancho.value;
-	ancho = parseInt (ancho);
 	largo = Largo.value;
 	largo = parseInt (largo);
+	ancho = Ancho.value;
+	ancho = parseInt (ancho);
 
-	perimetro = (ancho + largo) * 2;
-	alambre = (perimetro * 3);
+	alambre = (largo + ancho) * (2) * 3;
 
-	alert ("La cantidad de alambre a comprar es de: "+alambre + " metros");
+	alert ("Se necesitan comprar: " + alambre + " metros de alambre"); 
+
 }
 function Circulo () 
 {
 	var radio;
-	var alambre2;
+	var alambre;
 
 	radio = Radio.value;
 	radio = parseInt (radio);
 
-	alambre2 = (radio * 3);
+	alambre = radio * 3;
 
-	alert ("La cantidad de alambre a comprar es de: "+alambre2 + " metros");
+	alert ("Se necesitan comprar: " + alambre + " metros de alambre"); 
+
 }
 function Materiales () 
 {
-	
+	var largo;
+	var ancho;
+	var cemento;
+	var cal;
+
+	largo = Largo.value;
+	largo = parseInt (largo);
+	ancho = Ancho.value;
+	ancho = parseInt (ancho);
+
+	cal = (largo + ancho) * (2) * 3;
+	cemento = (largo + ancho) * (2) * 2
+
+	alert ("Se necesitan comprar: " + cemento + " bolsas de cemento" + " y " + cal + " bolsas de cal" ); 
 }
+
+
+//Planteo del problema.
+
+//1-Variables de lo que necesito y muestro;
+//2-Variable= elId.value;
+//3-parseInt;
+//4-Operaciones necesarias;
+//5-alert (verificando todo);

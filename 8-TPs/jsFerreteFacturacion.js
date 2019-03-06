@@ -5,56 +5,64 @@ C.	ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
 */
 function Sumar () 
 {
-	var numero1;
-	var numero2;
-	var numero3;
-	var sumar;
+	var precio1;
+	var precio2;
+	var precio3;
+	var suma;	
 
-	numero1 = PrecioUno.value;
-	numero1 = parseInt (numero1);
-	numero2 = PrecioDos.value;
-	numero2 = parseInt (numero2);
-	numero3 = PrecioTres.value;
-	numero3 = parseInt (numero3);
+	precio1 = PrecioUno.value;
+	precio1 = parseInt (precio1);
+	precio2 = PrecioDos.value;
+	precio2 = parseInt (precio2);
+	precio3 = PrecioTres.value;
+	precio3 = parseInt (precio3);
 
-	sumar = (numero1 + numero2 + numero3);
+	suma = precio1 + precio2 + precio3;
 
-	alert ("La suma es "+sumar);
+	alert ("La suma es: " +suma);
 }
 function Promedio () 
 {
-	var numero1;
-	var numero2;
-	var numero3;
-	var promedio;
+	var precio1;
+	var precio2;
+	var precio3;
+	var promedio;	
 
-	numero1 = PrecioUno.value;
-	numero1 = parseInt (numero1);
-	numero2 = PrecioDos.value;
-	numero2 = parseInt (numero2);
-	numero3 = PrecioTres.value;
-	numero3 = parseInt (numero3);
+	precio1 = PrecioUno.value;
+	precio1 = parseInt (precio1);
+	precio2 = PrecioDos.value;
+	precio2 = parseInt (precio2);
+	precio3 = PrecioTres.value;
+	precio3 = parseInt (precio3);
 
-	promedio = (numero1 + numero2 + numero3) / 3;
+	promedio = (precio1 + precio2 + precio3) / 3;
 
-	alert ("El promedio es de "+promedio);
+	alert ("El promedio es: " +promedio);
 }
 function PrecioFinal () 
 {
-	var numero1;
-	var numero2;
-	var numero3;
-	var porcentaje;
-	var preciofinal;
+	var precio1;
+	var precio2;
+	var precio3;
+	var precioFinal;	
 
-	numero1 = PrecioUno.value;
-	numero1 = parseInt (numero1);
-	numero2 = PrecioDos.value;
-	numero2 = parseInt (numero2);
-	numero3 = PrecioTres.value;
-	numero3 = parseInt (numero3);
+	precio1 = PrecioUno.value;
+	precio1 = parseInt (precio1);
+	precio2 = PrecioDos.value;
+	precio2 = parseInt (precio2);
+	precio3 = PrecioTres.value;
+	precio3 = parseInt (precio3);
 
-	porcentaje = (numero1 + numero2 + numero3) * (21) / (100) ;
-	preciofinal = (numero1 + numero2 + numero3) + porcentaje;
-	alert ("El precio final más IVA es de "+preciofinal);
+	precioFinal = (precio1 + precio2 + precio3) + (precio1 + precio2 + precio3) / 100 * 21; 
+
+	alert ("El precioFinal + 21% de IVA es : " + precioFinal);
 }
+
+//Planteo del Problema.
+
+//1-Variables de lo que necesito y muesto
+//2-variable = elId.value
+//3-parseInt
+//4-x3
+//5-Operaciones de lo que necesito
+//6-Alert
